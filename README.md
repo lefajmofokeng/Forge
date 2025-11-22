@@ -4,7 +4,7 @@ A sophisticated, modern hero section for a brand and UI/UX design portfolio feat
 
 ## Live Demo
 
-[View Live Demo](https://thisislefa.github.io/brandcraft)
+[View Live Demo](https://thisislefa.github.io/BrandCraft)
 
 ## Features
 
@@ -124,6 +124,7 @@ Update the hero content by modifying the text elements:
 ## License
 
 [MIT License](https://github.com/thisislefa/BrandCraft/blob/main/LICENSE)
+
 
 
 
