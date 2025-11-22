@@ -1,0 +1,175 @@
+ /* --- CSS Variables for Easy Theming --- */
+        :root {
+            --color-dark-bg: #000000; /* Slightly softer black background */
+            --color-content-bg: #0d0d0d; /* Background for the content block */
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #c2c2c2;
+            --color-cta-orange: #ff5d17; /* Precise orange/coral color */
+            --color-cta-hover: #f76323;
+            --border-radius-large: 4px;
+            --font-inter: 'Inter', sans-serif;
+            --max-width-desktop: 1300px;
+            --content-gap: 3rem; /* Adjusted gap between image and text */
+        }
+
+        /* --- Base & Utilities --- */
+        body {
+            font-family: var(--font-inter);
+            background-color: var(--color-dark-bg);
+            color: var(--color-text-primary);
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* --- Main Layout Container --- */
+        .hero-section-container {
+            width: 100%;
+            max-width: var(--max-width-desktop);
+            /* Removed horizontal padding from container, now handled by body padding */
+            padding: 5rem 0; 
+        }
+
+        /* --- Content Block (The Core Component) --- */
+        .hero-content-block {
+            display: flex;
+            align-items: stretch; /* Stretch items to match height */
+            /* Match the subtle dark background of the content area in the image */
+            border-radius: var(--border-radius-large);
+            /* REMOVED internal padding to meet user request */
+            padding: 0; 
+            gap: 0; /* Removing gap here and adding it to the text block instead */
+            max-height: 600px;
+        }
+
+        /* --- Left Side: Image Wrapper - Image size reduced (flex: 0.8) --- */
+        .visual-presentation-area {
+            flex: 0.8; 
+            position: relative;
+            border-radius: var(--border-radius-large);
+            overflow: hidden;
+            /* New, smaller aspect ratio for the image */
+            aspect-ratio: 1 / 1.1; 
+            min-width: 300px; /* Reduced minimum width */
+            background-color: #333; /* Fallback color */
+        }
+        
+        .hero-main-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Applying filter to emulate the black & white effect in the image */
+            filter: grayscale(100%);
+        }
+
+        /* --- Right Side: Text and CTA Wrapper --- */
+        .call-to-action-area {
+            flex: 1.2; /* Text block scales fluidly and now takes more space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Adding padding and gap back here to maintain spacing without internal block padding */
+            padding: 3rem; 
+            min-width: 300px;
+        }
+
+        /* --- Typography Styles --- */
+        .headline-main {
+            font-size: 3.5rem;
+            letter-spacing: -0.03em;
+            font-weight: 700; /* Extra bold to match the impact */
+            line-height: 1.15;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .description-lead {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+            padding-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* --- Button Component --- */
+        .cta-action-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            background-color: var(--color-cta-orange);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 60px;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+            max-width: fit-content;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+        .cta-action-button:hover {
+            background-color: var(--color-cta-hover);
+            box-shadow: 0 4px 15px rgba(248, 125, 74, 0.4);
+        }
+        
+        /* Arrow icon within button */
+        .button-icon-arrow {
+            margin-right: 0.5rem;
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: var(--color-text-primary);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* --- Responsive Design (Mobile First Adjustments) --- */
+        @media (max-width: 1024px) {
+            .hero-content-block {
+                flex-direction: column; /* Stack vertically */
+                gap: 2rem;
+                /* Restoring small padding for mobile when stacked */
+                padding: 1.5rem; 
+                min-height: auto;
+            }
+            
+            /* On mobile, let image take full width again */
+            .visual-presentation-area {
+                min-width: 100%;
+                width: 100%;
+                aspect-ratio: 16 / 10; 
+                flex: none;
+            }
+            
+            /* On mobile, text area is no longer side-by-side so remove its large padding */
+            .call-to-action-area {
+                min-width: 100%;
+                padding: 0; 
+                flex: none;
+                gap: 0;
+            }
+
+            .headline-main {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+             .hero-section-container {
+                padding: 0 10px;
+            }
+            .hero-content-block {
+                padding: 1rem;
+            }
+            .headline-main {
+                font-size: 2rem;
+            }
+        }
