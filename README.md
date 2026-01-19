@@ -4,9 +4,11 @@
 
 Forge is a sophisticated, split-panel hero component designed for personal portfolios, creative agencies, and designer showcases. Featuring a distinctive black-and-white aesthetic with bold typography and strategic use of color accents, this component creates immediate visual impact while maintaining clarity and purpose.
 
+<img width="1920" height="1047" alt="forge" src="https://github.com/user-attachments/assets/5cdd9c89-282d-42aa-b3c4-a4e096b3dbcf" />
+
 ## Live Deployment
 
-[View Demo](https://thisislefa.github.io/Forge)  
+[View Demo](https://lefajmofokeng.github.io/Forge)  
 
 ---
 
@@ -642,6 +644,7 @@ For technical issues:
 ---
 
 **Forge** — A distinctive hero component for modern creative portfolios.
+
 
 
 
